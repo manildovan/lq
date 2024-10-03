@@ -27,6 +27,150 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<!-- CSS para o carrossel e o conteúdo -->
+<style>
+  /* Configurações básicas do container do carrossel */
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'jost', sans-serif; /* Fonte moderna e minimalista */
+  }
+
+  /* Configurações do Swiper */
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* Efeito de transição suave */
+  .swiper-slide-active {
+    transform: scale(1.1); /* Efeito de zoom suave */
+  }
+
+  /* Conteúdo sobreposto minimalista */
+  .overlay-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3); /* Overlay transparente */
+    backdrop-filter: blur(0.5px); /* Efeito de desfoque no fundo */
+  }
+
+  .headline {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    animation: fadeIn 1s forwards; /* Animação para o título */
+  }
+
+  .subheadline {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #f0f0f0;
+    margin: 20px 0;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards; /* Animação para o subtítulo */
+  }
+
+  /* Botão minimalista com efeito de hover */
+  .btn-outline-light {
+    border: 0px solid #fff;
+    color: #fff;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    border-radius: 30px;
+  }
+
+  .btn-outline-light:hover {
+    background: #2c93bf;
+    color: #fff;
+  }
+
+  /* Estilos para a navegação e paginação do carrossel */
+  .swiper-pagination-bullet {
+    background-color: #fff;
+    opacity: 0.8;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #fff;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    opacity: 1;
+  }
+
+  /* Animações personalizadas */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+   /* Estilos do botão flutuante */
+  .floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #32a84e;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+  }
+
+  /* Efeito de hover no botão */
+  .floating-btn:hover {
+    background-color: none;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+  }
+
+  /* Imagem dentro do botão */
+  .floating-btn-img {
+    width: 30px; /* Largura da imagem */
+    height: 30px; /* Altura da imagem */
+    object-fit: cover; /* Mantém a proporção da imagem */
+  }
+</style>
     
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -57,7 +201,7 @@
     <div class="row align-items-center justify-content-center">
 
       <div class="col-4">
-        <h1 class="m-0 site-logo"><a href="index.html"><img src="images/logo.png" style="width:150px"></a></h1>
+        <h1 class="m-0 site-logo"><a href="index.html"><span style="color: #05054d ">LIFE</span> <span style="color: #2c93bf; font-weight: 700;" >QUALITY</span></a></h1>
       </div>
 
       <div class="col-8">
@@ -81,30 +225,40 @@
 
 </header>
 
-
-    <div class="site-blocks-cover overlay bg-light" style="background-image: url('images/hero_bg_1.jpg');" id="home-section">
-
-  <div class="container">
-    <div class="row justify-content-center">
-
-      <div class="col-12 text-center align-self-center text-intro">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <h1 class="text-white" data-aos="fade-up" data-aos-delay="">Bem-vindo à Life Quality</h1>
-            <p class="lead text-white" data-aos="fade-up" data-aos-delay="100">
-              Oferecemos soluções integradas de limpeza, captação de água, recolha de resíduos e jardinagem, promovendo qualidade de vida e sustentabilidade para empresas e comunidades.
-            </p>
-            <p data-aos="fade-up" data-aos-delay="200">
-              <a href="#services-section" class="btn smoothscroll btn-primary">Nossos Serviços</a>
-            </p>
-          </div>
-        </div>
-      </div>
-
+<div class="carousel-container">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- Slides do carrossel com imagens de fundo -->
+      <div class="swiper-slide" style="background-image: url('images/bg.jpg');"></div>
+      <div class="swiper-slide" style="background-image: url('images/carousel/1.jpg');"></div>
+      <div class="swiper-slide" style="background-image: url('images/carousel/2.jpg');"></div>
+      <div class="swiper-slide" style="background-image: url('images/carousel/3.jpg');"></div>
+      <div class="swiper-slide" style="background-image: url('images/carousel/4.jpg');"></div>
     </div>
+    
+    <!-- Paginação e navegação do carrossel -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
   </div>
 
-</div>  
+  <!-- Texto sobreposto com estilo minimalista -->
+  <div class="overlay-content">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h1 class="headline" data-aos="fade-up"><img src="images/logo.png" style="width:200px"></h1>
+          <p class="subheadline" data-aos="fade-up" data-aos-delay="100">
+
+            Oferecemos soluções completas de limpeza e manutenção para empresas e residências, com foco em qualidade e sustentabilidade.<br><br>
+            Transforme o seu ambiente com quem entende de limpeza e manutenção.
+          </p>
+          <a href="#services-section" class="btn btn-outline-light smoothscroll" data-aos="fade-up" data-aos-delay="200">Conheça nossos serviços</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <div class="site-section" id="about-section">
@@ -123,7 +277,7 @@
         </p>
       </div>
 
-      <div class="col-lg-4">
+      <div class="col-lg-4">s
         <img src="images/about.jpg" alt="Image" class="img-fluid">
       </div>
 
@@ -189,7 +343,7 @@
       <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
         <div class="service d-flex h-100">
           <div class="svg-icon">
-            <img src="images/flaticon/svg/2.png" alt="Image" class="img-fluid">
+            <img src="images/flaticon/svg/5.png" alt="Image" class="img-fluid">
           </div>
           <div class="service-about">
             <h3>Recolha e Tratamento de Resíduos</h3>
@@ -201,7 +355,7 @@
       <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="">
         <div class="service d-flex h-100">
           <div class="svg-icon">
-            <img src="images/flaticon/svg/1.png" alt="Image" class="img-fluid">
+            <img src="images/flaticon/svg/6.png" alt="Image" class="img-fluid">
           </div>
           <div class="service-about">
             <h3>Limpeza de Edifícios e Equipamentos Industriais</h3>
@@ -225,7 +379,7 @@
       <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="">
         <div class="service d-flex h-100">
           <div class="svg-icon">
-            <img src="images/flaticon/svg/3.png" alt="Image" class="img-fluid">
+            <img src="images/flaticon/svg/1.png" alt="Image" class="img-fluid">
           </div>
           <div class="service-about">
             <h3>Serviços de Lavandaria</h3>
@@ -237,7 +391,7 @@
       <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
         <div class="service d-flex h-100">
           <div class="svg-icon">
-            <img src="images/flaticon/svg/5.png" alt="Image" class="img-fluid" style="width:100px">
+            <img src="images/flaticon/svg/2.png" alt="Image" class="img-fluid" style="width:100px">
           </div>
           <div class="service-about">
             <h3>Fumigação, Desratização e Higienização</h3>
@@ -249,7 +403,7 @@
       <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="">
         <div class="service d-flex h-100">
           <div class="svg-icon">
-            <img src="images/flaticon/svg/7.png" alt="Image" class="img-fluid">
+            <img src="images/flaticon/svg/3.png" alt="Image" class="img-fluid">
           </div>
           <div class="service-about">
             <h3>Car Wash</h3>
@@ -261,7 +415,7 @@
       <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
         <div class="service d-flex h-100">
           <div class="svg-icon">
-            <img src="images/flaticon/svg/6.png" alt="Image" class="img-fluid">
+            <img src="images/flaticon/svg/7.png" alt="Image" class="img-fluid">
           </div>
           <div class="service-about">
             <h3>Venda e Fornecimento de Material de Limpeza</h3>
@@ -269,10 +423,13 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
+
+<a href="https://wa.link/lra4u9" class="floating-btn"> 
+  <img src="images/whatsapp.png" alt="Contato" class="floating-btn-img">
+</a>
 
 
    <section class="site-section block__62272" id="projects-section">
@@ -333,7 +490,7 @@
                     <img class="img-fluid" src="images/garden.jpg" alt="Projeto Design 1">
                     <div class="item-info">
                         <h4 style="color: white;">Projeto 4</h4>
-                        <p>Projeto de design criativo.</p>
+                        <p>.</p>
                     </div>
                 </a>
             </div>
@@ -343,9 +500,7 @@
     </div>
 </section>
 
-
-
-   <section class="site-section bg-primary" id="testimonials-section">
+ <section class="site-section bg-primary" id="testimonials-section">
   <div class="container">
     <div class="row">
       <div class="col-12 mb-5 position-relative">
@@ -380,6 +535,25 @@
     </div>
   </div>
 </section>
+
+<section id="clientes" class="clientes-section">
+  <div class="container">
+
+     <div class="col-12 mb-5 position-relative">
+        <h2 class="section-title text-center mb-5">Alguns de <span>nossos clientes</span></h2>
+      </div>
+    <div class="clientes-logos">
+      <div class="logo-item"><img src="images/water.png" alt="Water aid logo"></div>
+      <div class="logo-item"><img src="images/idesign.png" alt="idesign logo"></div>
+      <div class="logo-item"><img src="images/water.png" alt="water aid logo"></div>
+      <div class="logo-item"><img src="images/idesign.png" alt="idesign logo"></div>
+      <div class="logo-item"><img src="images/water.png" alt="idesign logo"></div>
+    </div>
+  </div>
+</section>
+
+
+
     
    <section class="site-section bg-light" id="blog-section">
   <div class="container">
@@ -391,7 +565,7 @@
 
       <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
         <div class="blog_entry">
-          <a href=""><img src="images/blog_1.jpg" alt="Image" class="img-fluid"></a>
+          <a href="singlee.html"><img src="images/blog_1.jpg" alt="Image" class="img-fluid"></a>
           <div class="p-4 bg-white">
             <h3><a href="singlee.html">5 Dicas Essenciais para Manter Seu Espaço Sempre Limpo</a></h3>
             <span class="date">Setembro 20, 2024</span>
@@ -403,7 +577,7 @@
 
       <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
         <div class="blog_entry">
-          <a href=""><img src="images/blog_2.jpg" alt="Image" class="img-fluid"></a>
+          <a href="single2.html"><img src="images/blog_2.jpg" alt="Image" class="img-fluid"></a>
           <div class="p-4 bg-white">
             <h3><a href="single2.html">Soluções Sustentáveis para Captação de Água em Grandes Espaços</a></h3>
             <span class="date">Setembro 15, 2024</span>
@@ -415,9 +589,9 @@
 
       <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
         <div class="blog_entry">
-          <a href=""><img src="images/blog_3.jpg" alt="Image" class="img-fluid"></a>
+          <a href="single.html"><img src="images/blog_3.jpg" alt="Image" class="img-fluid"></a>
           <div class="p-4 bg-white">
-            <h3><a href="">A Importância da Higienização Profunda em Ambientes Corporativos</a></h3>
+            <h3><a href="single.html">A Importância da Higienização Profunda em Ambientes Corporativos</a></h3>
             <span class="date">Setembro 10, 2024</span>
             <p>Entenda por que a higienização regular é essencial para manter a saúde e segurança em locais de trabalho com grande circulação de pessoas.</p>
             <p class="more"><a href="single.html">Leia Mais</a></p>
@@ -434,7 +608,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12 mb-5 position-relative">
-            <h2 class="section-title text-center mb-5">Formulário</h2>
+            <h2 class="section-title text-center mb-5">Formulário de contacto</h2>
           </div>
         </div>
         <div class="row justify-content-between">
@@ -485,12 +659,12 @@
         </li>
         <li class="mb-3">
             <strong class="d-block mb-1">Telefone</strong>
-            <span>+258 +258 84 708 8734</span><br>
-            <span>+258 +258 86 206 6223</span>
+            <span>+258 84 708 8734</span><br>
+            <span>+258 86 206 6223</span>
         </li>
         <li class="mb-3">
             <strong class="d-block mb-1">Email</strong>
-            <span>info@lifequality.com</span>
+            <span>info@lifequalitysolucoes.com</span>
         </li>
          <li class="mb-3">
             <strong class="d-block mb-1">Horários</strong>
@@ -545,9 +719,9 @@
                     <div class="col-lg-4">
                         <h3 class="footer-title">Suporte</h3>
                         <ul class="list-unstyled">
-                            <li><a href="#">Central de Ajuda</a></li>
-                            <li><a href="#">Perguntas Frequentes</a></li>
-                            <li><a href="#">Entre em Contato</a></li>
+                            <li><a href="https://wa.link/lra4u9">Central de Ajuda</a></li>
+                            <li><a href="https://wa.link/lra4u9">Perguntas Frequentes</a></li>
+                            <li><a href="https://wa.link/lra4u9">Entre em Contato</a></li>
                         </ul>
                     </div>
                 </div>
@@ -567,7 +741,8 @@
                     Copyright &copy;
                     <script>
                         document.write(new Date().getFullYear());
-                    </script> Todos os direitos reservados | Life Quality - Soluções em Limpeza e Sustentabilidade
+                    </script> Todos os direitos reservados | Life Quality - Soluções em Limpeza e Sustentabilidade.
+                    <br> website criado pela <a href="https://iidesign.online/" target="blank"><span>IDesign</span> <span style="color:crimson;">moz</span></a>
                 </p>
             </div>
         </div>
@@ -588,7 +763,28 @@
   <script src="js/jquery.sticky.js"></script>
   <script src="js/isotope.pkgd.min.js"></script>
 
-  
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
   <script src="js/main.js"></script>
+<!-- Swiper.js para carrossel -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    effect: 'fade', // Efeito de transição suave entre imagens
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
   </body>
 </html>

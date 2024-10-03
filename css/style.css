@@ -1068,3 +1068,45 @@ body:after {
     background-color: #007bff;
     color: white;
 }
+
+
+/* Estilos da Section */
+.clientes-section {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.section-title span {
+  font-weight: bold;
+}
+
+.clientes-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.logo-item {
+  flex: 1 1 30%;
+  max-width: 180px;
+  text-align: center;
+}
+
+.logo-item img {
+  width: 100%;
+  max-width: 150px;
+  object-fit: contain;
+  filter: grayscale(100%);
+}
+
+.logo-item img:hover {
+  filter: grayscale(0);
+}

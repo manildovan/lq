@@ -28,6 +28,42 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+      
+
+   /* Estilos do botão flutuante */
+  .floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #32a84e;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+  }
+
+  /* Efeito de hover no botão */
+  .floating-btn:hover {
+    background-color: none;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+  }
+
+  /* Imagem dentro do botão */
+  .floating-btn-img {
+    width: 30px; /* Largura da imagem */
+    height: 30px; /* Altura da imagem */
+    object-fit: cover; /* Mantém a proporção da imagem */
+  }
+    </style>
     
   </head>
    <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -110,7 +146,7 @@
         <div class="row">
           <div class="col-md-8 blog-content">
             <p class="lead">Soluções Sustentáveis para Captação de Água em Grandes Espaços</p>
-            <p>Nos dias de hoje, o uso consciente dos recursos naturais tem se tornado essencial, principalmente em ambientes que demandam grandes quantidades de água, como indústrias, grandes empresas e propriedades rurais. A captação de água, aliada a práticas sustentáveis, é uma solução inteligente para reduzir o consumo de água potável, preservar o meio ambiente e gerar economia para as organizações.<p><img src="images/img_1.jpg" alt="Image" class="img-fluid"></p>
+            <p>Nos dias de hoje, o uso consciente dos recursos naturais tem se tornado essencial, principalmente em ambientes que demandam grandes quantidades de água, como indústrias, grandes empresas e propriedades rurais. A captação de água, aliada a práticas sustentáveis, é uma solução inteligente para reduzir o consumo de água potável, preservar o meio ambiente e gerar economia para as organizações.<p><img src="images/agua.png" alt="Image" class="img-fluid"></p>
 
             <blockquote><p>Neste artigo, vamos explorar algumas das principais soluções sustentáveis para captação de água em grandes espaços e como elas podem contribuir para um futuro mais verde.</p></blockquote>
 
@@ -126,7 +162,7 @@
               </ul>
 
               Precisa de um sistema de captação de água da chuva?
-              <a href="">Fale com um especialista agora!</a>
+              <a href="https://wa.link/lra4u9">Fale com um especialista agora!</a>
               </p>
 <br>
              <h4>2. Sistemas de Reutilização de Água Cinza</h4>
@@ -143,7 +179,7 @@
               </ul>
 
             Quer saber mais sobre a reutilização de água cinza?
-              <a href="">Solicite uma consultoria gratuita!</a>
+              <a href="https://wa.link/lra4u9">Solicite uma consultoria gratuita!</a>
               </p>
 
               <h4>3. Estação de Tratamento de Efluentes Própria</h4>
@@ -160,7 +196,7 @@
               </ul>
 
            Sua empresa precisa de uma estação de tratamento de efluentes?
-              <a href="">Entre em contato e saiba como implementar!</a></p>
+              <a href="https://wa.link/lra4u9">Entre em contato e saiba como implementar!</a></p>
 
 
 
@@ -178,7 +214,7 @@
               </ul>
 
            Pense em construir um reservatório de água?
-              <a href="">Saiba mais sobre nossos serviços!</a></p>
+              <a href="https://wa.link/lra4u9">Saiba mais sobre nossos serviços!</a></p>
 
 
              </p>
@@ -196,87 +232,6 @@
 
             <div class="pt-5">
               <h3 class="mb-5">0 Commentários</h3>
-              <!--<ul class="comment-list">
-                <li class="comment">
-                  <div class="vcard bio">
-                    <img src="images/person_1.jpg" alt="Image placeholder">
-                  </div>
-                  <div class="comment-body">
-                    <h3>Jean Doe</h3>
-                    <div class="meta">January 9, 2018 at 2:21pm</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                    <p><a href="#" class="reply">Reply</a></p>
-                  </div>
-                </li>
-
-                <li class="comment">
-                  <div class="vcard bio">
-                    <img src="images/person_1.jpg" alt="Image placeholder">
-                  </div>
-                  <div class="comment-body">
-                    <h3>Jean Doe</h3>
-                    <div class="meta">January 9, 2018 at 2:21pm</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                    <p><a href="#" class="reply">Reply</a></p>
-                  </div>
-
-                  <ul class="children">
-                    <li class="comment">
-                      <div class="vcard bio">
-                        <img src="images/person_1.jpg" alt="Image placeholder">
-                      </div>
-                      <div class="comment-body">
-                        <h3>Jean Doe</h3>
-                        <div class="meta">January 9, 2018 at 2:21pm</div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                        <p><a href="#" class="reply">Reply</a></p>
-                      </div>
-
-
-                      <ul class="children">
-                        <li class="comment">
-                          <div class="vcard bio">
-                            <img src="images/person_1.jpg" alt="Image placeholder">
-                          </div>
-                          <div class="comment-body">
-                            <h3>Jean Doe</h3>
-                            <div class="meta">January 9, 2018 at 2:21pm</div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                            <p><a href="#" class="reply">Reply</a></p>
-                          </div>
-
-                            <ul class="children">
-                              <li class="comment">
-                                <div class="vcard bio">
-                                  <img src="images/person_1.jpg" alt="Image placeholder">
-                                </div>
-                                <div class="comment-body">
-                                  <h3>Jean Doe</h3>
-                                  <div class="meta">January 9, 2018 at 2:21pm</div>
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                                  <p><a href="#" class="reply">Reply</a></p>
-                                </div>
-                              </li>
-                            </ul>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="comment">
-                  <div class="vcard bio">
-                    <img src="images/person_1.jpg" alt="Image placeholder">
-                  </div>
-                  <div class="comment-body">
-                    <h3>Jean Doe</h3>
-                    <div class="meta">January 9, 2018 at 2:21pm</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                    <p><a href="#" class="reply">Reply</a></p>
-                  </div>
-                </li>
-              </ul>
-              END comment-list -->
               
               <div class="comment-form-wrap pt-5">
                 <h3 class="mb-5">Deixe um comentário</h3>
@@ -319,16 +274,16 @@
             <div class="sidebar-box">
               <div class="categories">
                 <h3 class="text-uppercase">Artigos Relacionados</h3>
-               <li><a href="#">Soluções Sustentáveis para Captação de Água em Grandes Espaços<span></span></a></li>
+               <li><a href="single2.html">Soluções Sustentáveis para Captação de Água em Grandes Espaços<span></span></a></li>
                <li><a href="singlee.html">5 Dicas Essenciais para Manter Seu Espaço Sempre Limpo<span></span></a></li>
-               <li><a href="#">A Importância da Higienização Profunda em Ambientes Corporativos<span></span></a></li>
+               <li><a href="single.html">A Importância da Higienização Profunda em Ambientes Corporativos<span></span></a></li>
               </div>
             </div>
             <div class="sidebar-box">
-              <img src="images/blog/2.png" alt="Image placeholder" class="img-fluid mb-4">
+              <a href="https://wa.link/lra4u9"><img src="images/blog/2.png" alt="Image placeholder" class="img-fluid mb-4"></a>
               <h3 class="text-uppercase">Life Quality</h3>
               <p></p>
-              <p><a href="#" class="btn btn-primary text-white">Fale conosco</a></p>
+              <p><a href="https://wa.link/lra4u9" class="btn btn-primary text-white">Fale conosco</a></p>
             </div>
             <div class="sidebar-box">
               <h3 class="text-uppercase">Citação</h3>
@@ -367,9 +322,9 @@
                     <div class="col-lg-4">
                         <h3 class="footer-title">Suporte</h3>
                         <ul class="list-unstyled">
-                            <li><a href="#">Central de Ajuda</a></li>
-                            <li><a href="#">Perguntas Frequentes</a></li>
-                            <li><a href="#">Entre em Contato</a></li>
+                            <li><a href="https://wa.link/lra4u9">Central de Ajuda</a></li>
+                            <li><a href="https://wa.link/lra4u9">Perguntas Frequentes</a></li>
+                            <li><a href="https://wa.link/lra4u9">Entre em Contato</a></li>
                         </ul>
                     </div>
                 </div>
@@ -389,12 +344,18 @@
                     Copyright &copy;
                     <script>
                         document.write(new Date().getFullYear());
-                    </script> Todos os direitos reservados | Life Quality - Soluções em Limpeza e Sustentabilidade
+                    </script> Todos os direitos reservados | Life Quality - Soluções em Limpeza e Sustentabilidade.
+                    <br> website criado pela <a href="https://iidesign.online/" target="blank"><span>IDesign</span> <span style="color:crimson;">moz</span></a>
                 </p>
             </div>
         </div>
     </div>
 </footer>
+
+<a href="https://wa.link/lra4u9" class="floating-btn"> 
+  <img src="images/whatsapp.png" alt="Contato" class="floating-btn-img">
+</a>
+
 
   </div> <!-- .site-wrap -->
 
